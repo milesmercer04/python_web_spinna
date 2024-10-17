@@ -1,5 +1,5 @@
 
-from math import *
+from math import pi, sqrt
 
 class Circle:
     def __init__(self, x, y, r):
@@ -8,17 +8,20 @@ class Circle:
         self.r = r
 
     def area(self):
-        return pi * self.r ** 2
-    
+        return pi * self._r ** 2
+
+    @property
     def x(self):
-        return self.x
-    
+        return self._x
+
+    @property
     def y(self):
-        return self.y
-    
+        return self._y
+
+    @property
     def r(self):
-        return self.r
-    
+        return self._r
+
 class Line:
     def __init__(self, x_1, y_1, x_2, y_2):
         self.x_1 = x_1
@@ -27,20 +30,24 @@ class Line:
         self.y_2 = y_2
 
     def length(self):
-        return sqrt((self.x_2 - self.x_1) ** 2 + (self.y_2 - self.y_1) ** 2)
-    
+        return sqrt((self._x_2 - self._x_1) ** 2 + (self._y_2 - self._y_1) ** 2)
+
+    @property
     def x_1(self):
-        return self.x_1
-    
+        return self._x_1
+
+    @property
     def y_1(self):
-        return self.y_1
-    
+        return self._y_1
+
+    @property
     def x_2(self):
-        return self.x_2
-    
+        return self._x_2
+
+    @property
     def y_2(self):
-        return self.y_2
-    
+        return self._y_2
+
 def objects_intercept(object_1, object_2):
     if isinstance(object_1, Line) and isinstance(object_2, Line):
         pass
@@ -52,5 +59,3 @@ def objects_intercept(object_1, object_2):
         pass
     else:
         raise ValueError("object_1 and object_2 must both be of types Line or Circle.")
-
-
